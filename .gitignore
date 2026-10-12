@@ -1,0 +1,31 @@
+# Dependencias
+node_modules/
+
+# Next.js
+.next/
+out/
+build/
+
+# Entorno y secretos
+.env
+.env.local
+.env.production
+serviceAccount*.json
+*-firebase-adminsdk-*.json
+
+# Firebase
+firebase-debug.log
+functions/node_modules/
+functions/.env
+.runtimeconfig.json
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log
+
+# Tokens / secretos sueltos
+token.txt
+
+# Caché de Firebase CLI
+.firebase/
