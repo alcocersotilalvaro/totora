@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "default": "totora-7df04"
+  },
+  "targets": {
+    "totora-7df04": {
+      "hosting": {
+        "ac-totora": ["ac-totora"]
+      }
+    }
+  }
+}

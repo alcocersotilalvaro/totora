@@ -1,0 +1,21 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Entradas del blog / muro cultural: lectura pública, escritura solo Admin SDK / Cloud Functions
+    match /posts/{postId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Formulario de contacto: cualquiera puede enviar, nadie puede leer desde el cliente
+    match /contactos/{contactoId} {
+      allow create: if true;
+      allow read, update, delete: if false;
+    }
+
+    // Control interno de sincronización (cursor de Facebook, deduplicación)
+    match /sincronizacion/{docId} {
+      allow read, write: if false;
+    }
+  }
+}

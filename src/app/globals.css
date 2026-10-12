@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Tema altiplánico — Asociación Cultural Totora
+   Paleta inspirada en el Lago Titicaca, la arcilla, el sol
+   altiplánico y la caña de totora.
+   ============================================================ */
+@theme {
+  --color-terracota: #a03322;
+  --color-terracota-oscuro: #7e2417;
+  --color-terracota-claro: #c25b42;
+  --color-titicaca: #1b365d;
+  --color-titicaca-claro: #2c4f82;
+  --color-titicaca-profundo: #122440;
+  --color-dorado: #d4af37;
+  --color-dorado-claro: #e8cd6f;
+  --color-totora: #8b5a2b;
+  --color-totora-claro: #b58249;
+  --color-crema: #fdfbf7;
+  --color-crema-oscuro: #f5efe4;
+  --color-noche: #0f172a;
+
+  --font-display: var(--font-fraunces), "Georgia", serif;
+  --font-body: var(--font-inter), "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: var(--color-crema);
+  color: var(--color-noche);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-dorado);
+  color: var(--color-titicaca-profundo);
+}
+
+/* ---- Utilidades de identidad cultural ---- */
+
+/* Borde de "textil andino": franjas geométricas para el borde
+   superior de tarjetas y separadores horizontales. */
+.borde-textil {
+  background-image: repeating-linear-gradient(
+    90deg,
+    #a03322 0 14px,
+    #d4af37 14px 28px,
+    #1b365d 28px 42px,
+    #8b5a2b 42px 56px
+  );
+}
+
+/* Versión invertida (para tarjetas sobre fondo oscuro) */
+.borde-textil-suave {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(212, 175, 55, 0.55) 0 14px,
+    rgba(192, 91, 66, 0.55) 14px 28px,
+    rgba(44, 79, 130, 0.55) 28px 42px
+  );
+}
+
+/* Fondo de zigzag andino (chakanas en cadena) para secciones */
+.patron-zigzag {
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.08) 0 2px,
+    transparent 2px 18px
+  ),
+  repeating-linear-gradient(
+    45deg,
+    rgba(160, 51, 34, 0.07) 0 2px,
+    transparent 2px 18px
+  );
+}
+
+/* Sombra cálida para tarjetas */
+.sombra-artesanal {
+  box-shadow: 0 1px 2px rgba(27, 54, 93, 0.08), 0 10px 30px rgba(27, 54, 93, 0.12);
+}
+
+/* Subrayado artesanal para títulos de sección */
+.subrayado-totora {
+  background-image: linear-gradient(transparent 68%, rgba(212, 175, 55, 0.55) 68%);
+  background-repeat: no-repeat;
+}
+
+/* Scrollbar discreta en tonos del tema */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--color-crema-oscuro); }
+::-webkit-scrollbar-thumb { background: var(--color-titicaca-claro); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-terracota); }

@@ -1,0 +1,31 @@
+{
+  "name": "totora-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portal oficial de la Asociación Cultural Totora (ACTO) - Sikuris del altiplano peruano",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "seed": "node scripts/seedFirestore.js",
+    "import:blog": "node scripts/importBlogspot.js",
+    "sync:facebook": "node scripts/syncFacebook.js",
+    "check:fb": "node scripts/checkFacebookToken.js",
+    "serve": "npm run build && firebase emulators:start"
+  },
+  "dependencies": {
+    "firebase": "^11.4.0",
+    "firebase-admin": "^13.2.0",
+    "next": "^15.2.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.17",
+    "tailwindcss": "^4.0.17",
+    "eslint": "^9",
+    "eslint-config-next": "^15.2.4"
+  }
+}
